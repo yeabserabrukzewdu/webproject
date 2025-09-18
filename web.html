@@ -1,0 +1,1541 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chaturbate - Discover Your Next Adventure | Mobile App Download</title>
+    <meta name="description" content="Download Your App Name for iOS and Android. Experience the future of mobile apps with seamless connectivity, AI-powered features, and unmatched performance. Get started today!">
+    <meta name="keywords" content="mobile app, Your App Name, iOS app, Android app, productivity app, AI mobile, app download, best mobile apps 2025">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Your App Name - Discover Your Next Adventure">
+    <meta property="og:description" content="Experience the future of mobile apps with our cutting-edge platform designed for seamless connectivity and unmatched performance.">
+    <meta property="og:image" content="https://yourapp.com/og-image.jpg">
+    <meta property="og:url" content="https://yourapp.com">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Your App Name - Discover Your Next Adventure">
+    <meta property="twitter:description" content="Experience the future of mobile apps with our cutting-edge platform.">
+    <meta property="twitter:image" content="https://yourapp.com/twitter-image.jpg">
+    
+    <!-- Schema.org for App -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Your App Name",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "ProductivityApplication",
+        "description": "Experience the future of mobile apps with our cutting-edge platform designed for seamless connectivity and unmatched performance.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "AI-Powered Recommendations",
+            "Cross-Platform Sync",
+            "Offline Mode",
+            "End-to-End Encryption",
+            "Multi-Language Support"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "12500"
+        }
+    }
+    </script>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourapp.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        html, body {
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background:fixed linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 0 0 20px 20px;
+            margin: 0 20px;
+            margin-bottom: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.411);
+        }
+
+        .nav-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .language-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .language-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 100px;
+        }
+
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .flag-icon {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .current-lang-code {
+            font-weight: 500;
+            margin-left: 2px;
+        }
+
+        .dropdown-arrow {
+            margin-left: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .language-btn.open .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Language Dropdown */
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            min-width: 120px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .language-container.open .language-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-option {
+            padding: 12px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.2s ease;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: #333;
+        }
+
+        .language-option:last-child {
+            border-bottom: none;
+        }
+
+        .language-option:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .language-option.selected {
+            background: rgba(102, 126, 234, 0.2);
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+            color: white;
+            margin: 0 auto;
+            max-width: 800px;
+            
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 100px;
+        }
+
+        .cta-btn {
+            padding: 16px 70px; /* Increased from 16px 32px */
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            min-width: 220px; /* Added minimum width for consistency */
+            justify-content: center;
+        }
+
+        .cta-primary {
+            background: #ff6b6b;
+            color: white;
+            border: 2px solid #ff6b6b;
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+
+        .cta-primary:hover { background: #ff5252; }
+        .cta-secondary:hover { background: white; color: #333; }
+
+        /* Platform Selection */
+        .platform-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.411);
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .platform-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .platforms {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .platform-card {
+            flex: 1;
+            min-width: 280px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .platform-card:hover,
+        .platform-card.selected {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+
+        .platform-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .android .platform-icon { color: #3ddc84; }
+        .ios .platform-icon { color: #333; }
+
+        .platform-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .platform-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .download-btn:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 60px auto 40px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.411);
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .faq-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+
+        .faq-question {
+            background: #667eea;
+            color: white;
+            padding: 20px 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: #5a67d8;
+        }
+
+        .faq-toggle {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            background: white;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 25px 30px;
+        }
+
+        .faq-answer p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .faq-answer ul {
+            color: #555;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 60px 20px 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .footer-menu {
+            list-style: none;
+        }
+
+        .footer-menu li {
+            margin-bottom: 12px;
+        }
+
+        .footer-menu a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            display: block;
+        }
+
+        .footer-menu a:hover {
+            color: #ff6b6b;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: #ff6b6b;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom a {
+            color: #ff6b6b;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                margin: 0 10px;
+                padding: 15px;
+            }
+            
+            .nav-title {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                padding: 60px 0;
+                margin: 0 10px;
+            }
+            
+            .hero h1 { 
+                font-size: 2.5rem; 
+            }
+            
+            .hero p { 
+                font-size: 1.1rem; 
+            }
+            
+            .cta-buttons { 
+                flex-direction: column; 
+                align-items: center; 
+            }
+            
+            .cta-btn { 
+                width: 280px; /* Increased from 200px for mobile */
+                padding: 16px 40px; /* Adjusted padding for wider buttons */
+            }
+            
+            .platforms { 
+                flex-direction: column; 
+                align-items: center; 
+            }
+            
+            .platform-section { 
+                margin: 20px auto; 
+                padding: 20px; 
+            }
+            
+            .faq-section { 
+                margin: 40px auto 20px; 
+                padding: 40px 20px; 
+            }
+            
+            .faq-title { 
+                font-size: 1.8rem; 
+            }
+            
+            .faq-question { 
+                padding: 18px 25px; 
+                font-size: 1rem; 
+            }
+            
+            .faq-item.active .faq-answer { 
+                padding: 20px 25px; 
+            }
+            
+            .language-dropdown { 
+                right: -10px; 
+                min-width: 110px; 
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .cta-btn { 
+                width: 100%; /* Full width on very small screens */
+                max-width: 280px;
+                padding: 16px 32px;
+            }
+            
+            .footer {
+                padding: 40px 10px 10px;
+            }
+            
+            .footer-content {
+                gap: 20px;
+            }
+            
+            .faq-question { 
+                padding: 16px 20px; 
+            }
+            
+            .faq-item.active .faq-answer { 
+                padding: 16px 20px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-title">Chaturbate</div>
+            <div class="language-container" id="languageContainer">
+                <button class="language-btn" id="languageBtn" onclick="toggleDropdown()">
+                    <span class="flag-icon" id="currentFlag">🇺🇸</span>
+                    <span class="current-lang-code" id="currentLang">EN</span>
+                    <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                        <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                
+                <div class="language-dropdown" id="languageDropdown">
+                    <div class="language-option selected" data-lang="en" onclick="selectLanguage('en')">
+                        <span class="flag-icon">🇺🇸</span>
+                        <span>English</span>
+                    </div>
+                    <div class="language-option" data-lang="es" onclick="selectLanguage('es')">
+                        <span class="flag-icon">🇪🇸</span>
+                        <span>Español</span>
+                    </div>
+                    <div class="language-option" data-lang="fr" onclick="selectLanguage('fr')">
+                        <span class="flag-icon">🇫🇷</span>
+                        <span>Français</span>
+                    </div>
+                    <div class="language-option" data-lang="de" onclick="selectLanguage('de')">
+                        <span class="flag-icon">🇩🇪</span>
+                        <span>Deutsch</span>
+                    </div>
+                    <div class="language-option" data-lang="it" onclick="selectLanguage('it')">
+                        <span class="flag-icon">🇮🇹</span>
+                        <span>Italiano</span>
+                    </div>
+                    <div class="language-option" data-lang="pt" onclick="selectLanguage('pt')">
+                        <span class="flag-icon">🇵🇹</span>
+                        <span>Português</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1 id="heroTitle">Discover Your Next Adventure</h1>
+                <p id="heroSubtitle">Experience the future of mobile apps with our cutting-edge platform designed for seamless connectivity and unmatched performance.</p>
+                
+                <div class="cta-buttons">
+                    <a href="#platforms" class="cta-btn cta-primary" id="getStartedBtn">
+                        🚀 <span id="getStartedText">Visit Web</span>
+                    </a>
+                    <a href="#faq" class="cta-btn cta-secondary" id="seeDemoBtn">
+                        📱 <span id="seeDemoText">Install App</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Platform Selection -->
+            <section class="platform-section" id="platforms">
+                <h2 class="platform-title" id="platformTitle">Choose Your Platform</h2>
+                <div class="platforms">
+                    <div class="platform-card android" onclick="selectPlatform('android')">
+                        <div class="platform-icon">🤖</div>
+                        <h3 id="androidTitle">Android</h3>
+                        <p id="androidDesc">Download on Google Play and join millions of users already experiencing our app on Android devices.</p>
+                        <button class="download-btn" onclick="downloadApp('android')" id="androidBtn">Download for Android</button>
+                    </div>
+                    
+                    <div class="platform-card ios" onclick="selectPlatform('ios')">
+                        <div class="platform-icon">🍎</div>
+                        <h3 id="iosTitle">iOS</h3>
+                        <p id="iosDesc">Available on the App Store. Optimized for iPhone, iPad, and all your Apple devices.</p>
+                        <button class="download-btn" onclick="downloadApp('ios')" id="iosBtn">Download for iOS</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section" id="faq">
+                <h2 class="faq-title" id="faqTitle">Frequently Asked Questions</h2>
+                <p class="faq-subtitle" id="faqSubtitle">Find answers to common questions about our app and get started with confidence.</p>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span id="faq1Title">What devices are compatible with the app?</span>
+                            <span class="faq-toggle">▽</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p id="faq1Answer">Our app is optimized for the latest versions of both Android and iOS. For Android, we recommend devices running Android 8.0 (Oreo) or higher. For iOS, the app requires iOS 14.0 or later.</p>
+                            <ul>
+                                <li><span id="faq1Android">Android:</span> 8.0+ (most modern devices)</li>
+                                <li><span id="faq1iOS">iOS:</span> 14.0+ (iPhone 6s and newer)</li>
+                                <li><span id="faq1Storage">Storage:</span> Minimum 100MB free space</li>
+                                <li><span id="faq1Internet">Internet:</span> Required for initial setup</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span id="faq2Title">Is the app free to download and use?</span>
+                            <span class="faq-toggle">▽</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p id="faq2Answer">Yes! The app is completely free to download and use. We offer premium features through optional in-app subscriptions that unlock advanced functionality and remove ads.</p>
+                            <ul>
+                                <li><span id="faq2Free">Free Tier:</span> Core features, limited daily usage</li>
+                                <li><span id="faq2Premium">Premium:</span> $4.99/month or $49.99/year - Unlimited access, ad-free</li>
+                                <li><span id="faq2Family">Family Plan:</span> $7.99/month - Up to 6 accounts</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span id="faq3Title">How does the app protect my privacy?</span>
+                            <span class="faq-toggle">▽</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p id="faq3Answer">Your privacy is our top priority. We follow strict data protection standards and only collect the minimum information necessary for the app to function properly.</p>
+                            <ul>
+                                <li><span id="faq3Encryption">End-to-End Encryption:</span> All data transmitted is encrypted</li>
+                                <li><span id="faq3NoAccount">No Account Required:</span> Use anonymously without registration</li>
+                                <li><span id="faq3Local">Local Storage:</span> Most data stays on your device</li>
+                                <li><span id="faq3GDPR">GDPR Compliant:</span> Full compliance with privacy regulations</li>
+                                <li><span id="faq3Permissions">Clear Permissions:</span> You control what the app can access</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span id="faq4Title">What makes this app different from others?</span>
+                            <span class="faq-toggle">▽</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p id="faq4Answer">Unlike traditional apps, ours uses advanced AI algorithms and machine learning to provide personalized recommendations and predictive features that adapt to your usage patterns.</p>
+                            <ul>
+                                <li><span id="faq4AI">AI-Powered:</span> Smart recommendations based on your behavior</li>
+                                <li><span id="faq4Sync">Cross-Platform Sync:</span> Seamless experience across devices</li>
+                                <li><span id="faq4Offline">Offline Mode:</span> Works without internet connection</li>
+                                <li><span id="faq4Custom">Customization:</span> Deep personalization options</li>
+                                <li><span id="faq4Community">Community Features:</span> Connect with other users</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <h3>Your App Name</h3>
+                    <p id="footerDescription">Experience the future of mobile apps with our cutting-edge platform designed for seamless connectivity and unmatched performance. Join millions of users worldwide.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" title="Follow us on Facebook">📘</a>
+                        <a href="#" aria-label="Twitter" title="Follow us on Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram" title="Follow us on Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn" title="Connect on LinkedIn">💼</a>
+                        <a href="#" aria-label="YouTube" title="Watch on YouTube">📺</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3 id="footerQuickLinks">Quick Links</h3>
+                    <ul class="footer-menu">
+                        <li><a href="#platforms" id="footerDownload">Download App</a></li>
+                        <li><a href="#faq" id="footerSupport">Support</a></li>
+                        <li><a href="/features" id="footerFeatures">Features</a></li>
+                        <li><a href="/pricing" id="footerPricing">Pricing</a></li>
+                        <li><a href="/blog" id="footerBlog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Menu -->
+                <div class="footer-section">
+                    <h3 id="footerCompany">Company</h3>
+                    <ul class="footer-menu">
+                        <li><a href="/about" id="footerAbout">About Us</a></li>
+                        <li><a href="/careers" id="footerCareers">Careers</a></li>
+                        <li><a href="/press" id="footerPress">Press</a></li>
+                        <li><a href="/partners" id="footerPartners">Partners</a></li>
+                        <li><a href="/contact" id="footerContact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Menu -->
+                <div class="footer-section">
+                    <h3 id="footerLegal">Legal</h3>
+                    <ul class="footer-menu">
+                        <li><a href="/privacy" id="footerPrivacy">Privacy Policy</a></li>
+                        <li><a href="/terms" id="footerTerms">Terms of Service</a></li>
+                        <li><a href="/cookies" id="footerCookies">Cookie Policy</a></li>
+                        <li><a href="/security" id="footerSecurity">Security</a></li>
+                        <li><a href="/accessibility" id="footerAccessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p id="footerCopyright">&copy; 2025 Your App Name, Inc. All rights reserved. | 
+                    <a href="/sitemap" id="footerSitemap">Sitemap</a> | 
+                    <a href="mailto:hello@yourapp.com" id="footerEmail">hello@yourapp.com</a>
+                </p>
+                <p id="footerMadeWith">Made with ❤️ for mobile adventurers worldwide</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Complete Language data for all 6 languages
+        const languages = {
+            en: {
+                flag: '🇺🇸',
+                code: 'EN',
+                full: 'English',
+                heroTitle: 'Discover Your Next Adventure',
+                heroSubtitle: 'Experience the future of mobile apps with our cutting-edge platform designed for seamless connectivity and unmatched performance.',
+                getStarted: 'Visit Web',
+                seeDemo: 'Install App',
+                platformTitle: 'Choose Your Platform',
+                faqTitle: 'Frequently Asked Questions',
+                faqSubtitle: 'Find answers to common questions about our app and get started with confidence.',
+                footerDescription: 'Experience the future of mobile apps with our cutting-edge platform designed for seamless connectivity and unmatched performance. Join millions of users worldwide.',
+                footerQuickLinks: 'Quick Links',
+                footerDownload: 'Download App',
+                footerSupport: 'Support',
+                footerFeatures: 'Features',
+                footerPricing: 'Pricing',
+                footerBlog: 'Blog',
+                footerCompany: 'Company',
+                footerAbout: 'About Us',
+                footerCareers: 'Careers',
+                footerPress: 'Press',
+                footerPartners: 'Partners',
+                footerContact: 'Contact',
+                footerLegal: 'Legal',
+                footerPrivacy: 'Privacy Policy',
+                footerTerms: 'Terms of Service',
+                footerCookies: 'Cookie Policy',
+                footerSecurity: 'Security',
+                footerAccessibility: 'Accessibility',
+                footerCopyright: '© 2025 Your App Name, Inc. All rights reserved.',
+                footerSitemap: 'Sitemap',
+                footerEmail: 'hello@yourapp.com',
+                footerMadeWith: 'Made with ❤️ for mobile adventurers worldwide',
+                android: { 
+                    title: 'Android', 
+                    desc: 'Download on Google Play and join millions of users already experiencing our app on Android devices.', 
+                    btn: 'Download for Android' 
+                },
+                ios: { 
+                    title: 'iOS', 
+                    desc: 'Available on the App Store. Optimized for iPhone, iPad, and all your Apple devices.', 
+                    btn: 'Download for iOS' 
+                },
+                faq: {
+                    1: { 
+                        title: 'What devices are compatible with the app?', 
+                        answer: 'Our app is optimized for the latest versions of both Android and iOS. For Android, we recommend devices running Android 8.0 (Oreo) or higher. For iOS, the app requires iOS 14.0 or later.',
+                        android: 'Android:',
+                        ios: 'iOS:',
+                        storage: 'Storage:',
+                        internet: 'Internet:'
+                    },
+                    2: { 
+                        title: 'Is the app free to download and use?', 
+                        answer: 'Yes! The app is completely free to download and use. We offer premium features through optional in-app subscriptions that unlock advanced functionality and remove ads.',
+                        free: 'Free Tier:',
+                        premium: 'Premium:',
+                        family: 'Family Plan:'
+                    },
+                    3: { 
+                        title: 'How does the app protect my privacy?', 
+                        answer: 'Your privacy is our top priority. We follow strict data protection standards and only collect the minimum information necessary for the app to function properly.',
+                        encryption: 'End-to-End Encryption:',
+                        noAccount: 'No Account Required:',
+                        local: 'Local Storage:',
+                        gdpr: 'GDPR Compliant:',
+                        permissions: 'Clear Permissions:'
+                    },
+                    4: { 
+                        title: 'What makes this app different from others?', 
+                        answer: 'Unlike traditional apps, ours uses advanced AI algorithms and machine learning to provide personalized recommendations and predictive features that adapt to your usage patterns.',
+                        ai: 'AI-Powered:',
+                        sync: 'Cross-Platform Sync:',
+                        offline: 'Offline Mode:',
+                        custom: 'Customization:',
+                        community: 'Community Features:'
+                    }
+                }
+            },
+            es: {
+                flag: '🇪🇸',
+                code: 'ES',
+                full: 'Español',
+                heroTitle: 'Descubre Tu Próxima Aventura',
+                heroSubtitle: 'Experimenta el futuro de las aplicaciones móviles con nuestra plataforma de vanguardia diseñada para una conectividad perfecta e inigualable rendimiento.',
+                getStarted: 'Comenzar',
+                seeDemo: 'Ver Demo',
+                platformTitle: 'Elige Tu Plataforma',
+                faqTitle: 'Preguntas Frecuentes',
+                faqSubtitle: 'Encuentra respuestas a preguntas comunes sobre nuestra aplicación y comienza con confianza.',
+                footerDescription: 'Experimenta el futuro de las aplicaciones móviles con nuestra plataforma de vanguardia. Únete a millones de usuarios en todo el mundo.',
+                footerQuickLinks: 'Enlaces Rápidos',
+                footerDownload: 'Descargar App',
+                footerSupport: 'Soporte',
+                footerFeatures: 'Características',
+                footerPricing: 'Precios',
+                footerBlog: 'Blog',
+                footerCompany: 'Empresa',
+                footerAbout: 'Sobre Nosotros',
+                footerCareers: 'Carreras',
+                footerPress: 'Prensa',
+                footerPartners: 'Socios',
+                footerContact: 'Contacto',
+                footerLegal: 'Legal',
+                footerPrivacy: 'Política de Privacidad',
+                footerTerms: 'Términos de Servicio',
+                footerCookies: 'Política de Cookies',
+                footerSecurity: 'Seguridad',
+                footerAccessibility: 'Accesibilidad',
+                footerCopyright: '© 2025 Your App Name, Inc. Todos los derechos reservados.',
+                footerSitemap: 'Mapa del Sitio',
+                footerEmail: 'hola@yourapp.com',
+                footerMadeWith: 'Hecho con ❤️ para aventureros móviles de todo el mundo',
+                android: { 
+                    title: 'Android', 
+                    desc: 'Descarga en Google Play y únete a millones de usuarios que ya están experimentando nuestra aplicación en dispositivos Android.', 
+                    btn: 'Descargar para Android' 
+                },
+                ios: { 
+                    title: 'iOS', 
+                    desc: 'Disponible en la App Store. Optimizado para iPhone, iPad y todos tus dispositivos Apple.', 
+                    btn: 'Descargar para iOS' 
+                },
+                faq: {
+                    1: { 
+                        title: '¿Qué dispositivos son compatibles con la aplicación?', 
+                        answer: 'Nuestra aplicación está optimizada para las últimas versiones de Android e iOS. Para Android, recomendamos dispositivos con Android 8.0 (Oreo) o superior. Para iOS, la aplicación requiere iOS 14.0 o posterior.',
+                        android: 'Android:',
+                        ios: 'iOS:',
+                        storage: 'Almacenamiento:',
+                        internet: 'Internet:'
+                    },
+                    2: { 
+                        title: '¿Es gratis descargar y usar la aplicación?', 
+                        answer: '¡Sí! La aplicación es completamente gratuita para descargar y usar. Ofrecemos funciones premium a través de suscripciones opcionales dentro de la aplicación que desbloquean funcionalidad avanzada y eliminan anuncios.',
+                        free: 'Plan Gratuito:',
+                        premium: 'Premium:',
+                        family: 'Plan Familiar:'
+                    },
+                    3: { 
+                        title: '¿Cómo protege la aplicación mi privacidad?', 
+                        answer: 'Tu privacidad es nuestra máxima prioridad. Seguimos estrictos estándares de protección de datos y solo recopilamos la información mínima necesaria para que la aplicación funcione correctamente.',
+                        encryption: 'Cifrado de Extremo a Extremo:',
+                        noAccount: 'No se Requiere Cuenta:',
+                        local: 'Almacenamiento Local:',
+                        gdpr: 'Cumplimiento GDPR:',
+                        permissions: 'Permisos Claros:'
+                    },
+                    4: { 
+                        title: '¿Qué hace diferente a esta aplicación de otras?', 
+                        answer: 'A diferencia de las aplicaciones tradicionales, la nuestra utiliza algoritmos de IA avanzados y aprendizaje automático para proporcionar recomendaciones personalizadas y funciones predictivas que se adaptan a tus patrones de uso.',
+                        ai: 'Impulsado por IA:',
+                        sync: 'Sincronización Multiplataforma:',
+                        offline: 'Modo Offline:',
+                        custom: 'Personalización:',
+                        community: 'Funciones de Comunidad:'
+                    }
+                }
+            },
+            fr: {
+                flag: '🇫🇷',
+                code: 'FR',
+                full: 'Français',
+                heroTitle: 'Découvrez Votre Prochaine Aventure',
+                heroSubtitle: 'Vivez l\'avenir des applications mobiles avec notre plateforme de pointe conçue pour une connectivité fluide et des performances inégalées.',
+                getStarted: 'Commencer',
+                seeDemo: 'Voir la Démo',
+                platformTitle: 'Choisissez Votre Plateforme',
+                faqTitle: 'Questions Fréquemment Posées',
+                faqSubtitle: 'Trouvez des réponses aux questions courantes sur notre application et commencez en toute confiance.',
+                footerDescription: 'Vivez l\'avenir des applications mobiles avec notre plateforme de pointe. Rejoignez des millions d\'utilisateurs dans le monde entier.',
+                footerQuickLinks: 'Liens Rapides',
+                footerDownload: 'Télécharger l\'App',
+                footerSupport: 'Support',
+                footerFeatures: 'Fonctionnalités',
+                footerPricing: 'Tarification',
+                footerBlog: 'Blog',
+                footerCompany: 'Entreprise',
+                footerAbout: 'À Propos',
+                footerCareers: 'Carrières',
+                footerPress: 'Presse',
+                footerPartners: 'Partenaires',
+                footerContact: 'Contact',
+                footerLegal: 'Légal',
+                footerPrivacy: 'Politique de Confidentialité',
+                footerTerms: 'Conditions d\'Utilisation',
+                footerCookies: 'Politique de Cookies',
+                footerSecurity: 'Sécurité',
+                footerAccessibility: 'Accessibilité',
+                footerCopyright: '© 2025 Your App Name, Inc. Tous droits réservés.',
+                footerSitemap: 'Plan du Site',
+                footerEmail: 'bonjour@yourapp.com',
+                footerMadeWith: 'Fait avec ❤️ pour les aventuriers mobiles du monde entier',
+                android: { 
+                    title: 'Android', 
+                    desc: 'Téléchargez sur Google Play et rejoignez des millions d\'utilisateurs qui découvrent déjà notre application sur Android.', 
+                    btn: 'Télécharger pour Android' 
+                },
+                ios: { 
+                    title: 'iOS', 
+                    desc: 'Disponible sur l\'App Store. Optimisé pour iPhone, iPad et tous vos appareils Apple.', 
+                    btn: 'Télécharger pour iOS' 
+                },
+                faq: {
+                    1: { 
+                        title: 'Quels appareils sont compatibles avec l\'application?', 
+                        answer: 'Notre application est optimisée pour les dernières versions d\'Android et d\'iOS. Pour Android, nous recommandons les appareils fonctionnant sous Android 8.0 (Oreo) ou supérieur. Pour iOS, l\'application nécessite iOS 14.0 ou ultérieur.',
+                        android: 'Android:',
+                        ios: 'iOS:',
+                        storage: 'Stockage:',
+                        internet: 'Internet:'
+                    },
+                    2: { 
+                        title: 'L\'application est-elle gratuite à télécharger et à utiliser?', 
+                        answer: 'Oui ! L\'application est complètement gratuite à télécharger et à utiliser. Nous proposons des fonctionnalités premium via des abonnements optionnels intégrés qui débloquent des fonctionnalités avancées et suppriment les publicités.',
+                        free: 'Niveau Gratuit:',
+                        premium: 'Premium:',
+                        family: 'Plan Familial:'
+                    },
+                    3: { 
+                        title: 'Comment l\'application protège-t-elle ma vie privée?', 
+                        answer: "Votre vie privée est notre priorité absolue. Nous respectons des normes strictes de protection des données et ne collectons que les informations minimales nécessaires au bon fonctionnement de l'application.",
+                        encryption: 'Chiffrement de Bout en Bout:',
+                        noAccount: 'Aucun Compte Requis:',
+                        local: 'Stockage Local:',
+                        gdpr: 'Conforme au RGPD:',
+                        permissions: 'Permissions Claires:'
+                    },
+                    4: { 
+                        title: "Qu'est-ce qui rend cette application différente des autres ?", 
+                        answer: "Contrairement aux applications traditionnelles, la nôtre utilise des algorithmes d'IA avancés et l'apprentissage automatique pour fournir des recommandations personnalisées et des fonctionnalités prédictives qui s'adaptent à vos habitudes d'utilisation.",
+                        ai: 'Alimenté par l\'IA:',
+                        sync: 'Synchronisation Multiplateforme:',
+                        offline: 'Mode Hors Ligne:',
+                        custom: 'Personnalisation:',
+                        community: 'Fonctionnalités Communautaires:'
+                    }
+                }
+            },
+            de: {
+                flag: '🇩🇪',
+                code: 'DE',
+                full: 'Deutsch',
+                heroTitle: 'Entdecken Sie Ihr Nächstes Abenteuer',
+                heroSubtitle: 'Erleben Sie die Zukunft mobiler Apps mit unserer hochmodernen Plattform, die für nahtlose Konnektivität und unvergleichliche Leistung entwickelt wurde.',
+                getStarted: 'Loslegen',
+                seeDemo: 'Demo Ansehen',
+                platformTitle: 'Wählen Sie Ihre Plattform',
+                faqTitle: 'Häufig Gestellte Fragen',
+                faqSubtitle: 'Finden Sie Antworten auf häufig gestellte Fragen zu unserer App und starten Sie selbstbewusst.',
+                footerDescription: 'Erleben Sie die Zukunft mobiler Apps mit unserer hochmodernen Plattform. Schließen Sie sich Millionen von Nutzern weltweit an.',
+                footerQuickLinks: 'Schnelle Links',
+                footerDownload: 'App Herunterladen',
+                footerSupport: 'Support',
+                footerFeatures: 'Funktionen',
+                footerPricing: 'Preise',
+                footerBlog: 'Blog',
+                footerCompany: 'Unternehmen',
+                footerAbout: 'Über Uns',
+                footerCareers: 'Karriere',
+                footerPress: 'Presse',
+                footerPartners: 'Partner',
+                footerContact: 'Kontakt',
+                footerLegal: 'Rechtlich',
+                footerPrivacy: 'Datenschutzrichtlinie',
+                footerTerms: 'Nutzungsbedingungen',
+                footerCookies: 'Cookie-Richtlinie',
+                footerSecurity: 'Sicherheit',
+                footerAccessibility: 'Barrierefreiheit',
+                footerCopyright: '© 2025 Your App Name, Inc. Alle Rechte vorbehalten.',
+                footerSitemap: 'Sitemap',
+                footerEmail: 'hallo@yourapp.com',
+                footerMadeWith: 'Hergestellt mit ❤️ für mobile Abenteurer weltweit',
+                android: { 
+                    title: 'Android', 
+                    desc: 'Laden Sie im Google Play Store herunter und schließen Sie sich Millionen von Nutzern an, die unsere App bereits auf Android-Geräten nutzen.', 
+                    btn: 'Für Android herunterladen' 
+                },
+                ios: { 
+                    title: 'iOS', 
+                    desc: 'Verfügbar im App Store. Optimiert für iPhone, iPad und alle Ihre Apple-Geräte.', 
+                    btn: 'Für iOS herunterladen' 
+                },
+                faq: {
+                    1: { 
+                        title: 'Welche Geräte sind mit der App kompatibel?', 
+                        answer: 'Unsere App ist für die neuesten Versionen von Android und iOS optimiert. Für Android empfehlen wir Geräte mit Android 8.0 (Oreo) oder höher. Für iOS ist iOS 14.0 oder neuer erforderlich.',
+                        android: 'Android:',
+                        ios: 'iOS:',
+                        storage: 'Speicher:',
+                        internet: 'Internet:'
+                    },
+                    2: { 
+                        title: 'Ist die App kostenlos zum Herunterladen und Verwenden?', 
+                        answer: 'Ja! Die App ist vollständig kostenlos zum Herunterladen und Verwenden. Wir bieten Premium-Funktionen über optionale In-App-Abonnements an, die erweiterte Funktionalitäten freischalten und Werbung entfernen.',
+                        free: 'Kostenloses Tarif:',
+                        premium: 'Premium:',
+                        family: 'Familienplan:'
+                    },
+                    3: { 
+                        title: 'Wie schützt die App meine Privatsphäre?', 
+                        answer: 'Ihr Datenschutz hat für uns höchste Priorität. Wir halten uns an strenge Datenschutzstandards und erfassen nur die minimal erforderlichen Informationen für den ordnungsgemäßen Betrieb der App.',
+                        encryption: 'Ende-zu-Ende-Verschlüsselung:',
+                        noAccount: 'Kein Konto erforderlich:',
+                        local: 'Lokaler Speicher:',
+                        gdpr: 'DSGVO-konform:',
+                        permissions: 'Klare Berechtigungen:'
+                    },
+                    4: { 
+                        title: 'Was macht diese App anders als andere?', 
+                        answer: 'Im Gegensatz zu herkömmlichen Apps verwendet unsere fortschrittliche KI-Algorithmen und maschinelles Lernen, um personalisierte Empfehlungen und vorausschauende Funktionen bereitzustellen, die sich an Ihre Nutzungsmuster anpassen.',
+                        ai: 'KI-gestützt:',
+                        sync: 'Plattformübergreifende Synchronisation:',
+                        offline: 'Offline-Modus:',
+                        custom: 'Anpassung:',
+                        community: 'Community-Funktionen:'
+                    }
+                }
+            },
+            it: {
+                flag: '🇮🇹',
+                code: 'IT',
+                full: 'Italiano',
+                heroTitle: 'Scopri La Tua Prossima Avventura',
+                heroSubtitle: 'Vivi il futuro delle app mobili con la nostra piattaforma all\'avanguardia progettata per una connettività senza soluzione di continuità e prestazioni ineguagliabili.',
+                getStarted: 'Inizia',
+                seeDemo: 'Vedi Demo',
+                platformTitle: 'Scegli La Tua Piattaforma',
+                faqTitle: 'Domande Frequenti',
+                faqSubtitle: 'Trova risposte alle domande comuni sulla nostra app e inizia con fiducia.',
+                footerDescription: 'Vivi il futuro delle app mobili con la nostra piattaforma all\'avanguardia. Unisciti a milioni di utenti in tutto il mondo.',
+                footerQuickLinks: 'Link Rapidi',
+                footerDownload: 'Scarica App',
+                footerSupport: 'Supporto',
+                footerFeatures: 'Funzionalità',
+                footerPricing: 'Prezzi',
+                footerBlog: 'Blog',
+                footerCompany: 'Azienda',
+                footerAbout: 'Chi Siamo',
+                footerCareers: 'Carriere',
+                footerPress: 'Stampa',
+                footerPartners: 'Partner',
+                footerContact: 'Contatti',
+                footerLegal: 'Legale',
+                footerPrivacy: 'Politica sulla Privacy',
+                footerTerms: 'Termini di Servizio',
+                footerCookies: 'Politica sui Cookie',
+                footerSecurity: 'Sicurezza',
+                footerAccessibility: 'Accessibilità',
+                footerCopyright: '© 2025 Your App Name, Inc. Tutti i diritti riservati.',
+                footerSitemap: 'Mappa del Sito',
+                footerEmail: 'ciao@yourapp.com',
+                footerMadeWith: 'Fatto con ❤️ per gli avventurieri mobili di tutto il mondo',
+                android: { 
+                    title: 'Android', 
+                    desc: 'Scarica su Google Play e unisciti a milioni di utenti che stanno già vivendo la nostra app su dispositivi Android.', 
+                    btn: 'Scarica per Android' 
+                },
+                ios: { 
+                    title: 'iOS', 
+                    desc: 'Disponibile sull\'App Store. Ottimizzato per iPhone, iPad e tutti i tuoi dispositivi Apple.', 
+                    btn: 'Scarica per iOS' 
+                },
+                faq: {
+                    1: { 
+                        title: 'Quali dispositivi sono compatibili con l\'app?', 
+                        answer: 'La nostra app è ottimizzata per le ultime versioni di Android e iOS. Per Android, consigliamo dispositivi con Android 8.0 (Oreo) o superiore. Per iOS, l\'app richiede iOS 14.0 o successivo.',
+                        android: 'Android:',
+                        ios: 'iOS:',
+                        storage: 'Archiviazione:',
+                        internet: 'Internet:'
+                    },
+                    2: { 
+                        title: 'L\'app è gratuita da scaricare e utilizzare?', 
+                        answer: 'Sì! L\'app è completamente gratuita da scaricare e utilizzare. Offriamo funzionalità premium tramite abbonamenti opzionali in-app che sbloccano funzionalità avanzate e rimuovono gli annunci.',
+                        free: 'Livello Gratuito:',
+                        premium: 'Premium:',
+                        family: 'Piano Familiare:'
+                    },
+                    3: { 
+                        title: 'Come l\'app protegge la mia privacy?', 
+                        answer: 'La tua privacy è la nostra massima priorità. Rispettiamo rigorosi standard di protezione dei dati e raccogliamo solo le informazioni minime necessarie per il corretto funzionamento dell\'app.',
+                        encryption: 'Crittografia End-to-End:',
+                        noAccount: 'Nessun Account Richiesto:',
+                        local: 'Archiviazione Locale:',
+                        gdpr: 'Conforme al GDPR:',
+                        permissions: 'Permessi Chiari:'
+                    },
+                    4: { 
+                        title: 'Cosa rende questa app diversa dalle altre?', 
+                        answer: "A differenza delle app tradizionali, la nostra utilizza algoritmi AI avanzati e machine learning per fornire raccomandazioni personalizzate e funzionalità predittive che si adattano ai tuoi modelli d'uso.",
+                        ai: 'Alimentato dall\'IA:',
+                        sync: 'Sincronizzazione Multi-piattaforma:',
+                        offline: 'Modalità Offline:',
+                        custom: 'Personalizzazione:',
+                        community: 'Funzionalità Community:'
+                    }
+                }
+            },
+            pt: {
+                flag: '🇵🇹',
+                code: 'PT',
+                full: 'Português',
+                heroTitle: 'Descubra Sua Próxima Aventura',
+                heroSubtitle: 'Experimente o futuro dos aplicativos móveis com nossa plataforma de ponta projetada para conectividade perfeita e desempenho incomparável.',
+                getStarted: 'Começar',
+                seeDemo: 'Ver Demo',
+                platformTitle: 'Escolha Sua Plataforma',
+                faqTitle: 'Perguntas Frequentes',
+                faqSubtitle: 'Encontre respostas para perguntas comuns sobre nosso aplicativo e comece com confiança.',
+                footerDescription: 'Experimente o futuro dos aplicativos móveis com nossa plataforma de ponta. Junte-se a milhões de usuários em todo o mundo.',
+                footerQuickLinks: 'Links Rápidos',
+                footerDownload: 'Baixar App',
+                footerSupport: 'Suporte',
+                footerFeatures: 'Recursos',
+                footerPricing: 'Preços',
+                footerBlog: 'Blog',
+                footerCompany: 'Empresa',
+                footerAbout: 'Sobre Nós',
+                footerCareers: 'Carreiras',
+                footerPress: 'Imprensa',
+                footerPartners: 'Parceiros',
+                footerContact: 'Contato',
+                footerLegal: 'Legal',
+                footerPrivacy: 'Política de Privacidade',
+                footerTerms: 'Termos de Serviço',
+                footerCookies: 'Política de Cookies',
+                footerSecurity: 'Segurança',
+                footerAccessibility: 'Acessibilidade',
+                footerCopyright: '© 2025 Your App Name, Inc. Todos os direitos reservados.',
+                footerSitemap: 'Mapa do Site',
+                footerEmail: 'ola@yourapp.com',
+                footerMadeWith: 'Feito com ❤️ para aventureiros móveis de todo o mundo',
+                android: { 
+                    title: 'Android', 
+                    desc: 'Baixe no Google Play e junte-se a milhões de usuários que já estão experimentando nosso aplicativo em dispositivos Android.', 
+                    btn: 'Baixar para Android' 
+                },
+                ios: { 
+                    title: 'iOS', 
+                    desc: 'Disponível na App Store. Otimizado para iPhone, iPad e todos os seus dispositivos Apple.', 
+                    btn: 'Baixar para iOS' 
+                },
+                faq: {
+                    1: { 
+                        title: 'Quais dispositivos são compatíveis com o aplicativo?', 
+                        answer: 'Nosso aplicativo é otimizado para as versões mais recentes do Android e iOS. Para Android, recomendamos dispositivos com Android 8.0 (Oreo) ou superior. Para iOS, o aplicativo requer iOS 14.0 ou posterior.',
+                        android: 'Android:',
+                        ios: 'iOS:',
+                        storage: 'Armazenamento:',
+                        internet: 'Internet:'
+                    },
+                    2: { 
+                        title: 'O aplicativo é gratuito para baixar e usar?', 
+                        answer: 'Sim! O aplicativo é completamente gratuito para baixar e usar. Oferecemos recursos premium por meio de assinaturas opcionais no aplicativo que desbloqueiam funcionalidades avançadas e removem anúncios.',
+                        free: 'Plano Gratuito:',
+                        premium: 'Premium:',
+                        family: 'Plano Familiar:'
+                    },
+                    3: { 
+                        title: 'Como o aplicativo protege minha privacidade?', 
+                        answer: 'Sua privacidade é nossa principal prioridade. Seguimos rigorosos padrões de proteção de dados e coletamos apenas as informações mínimas necessárias para o funcionamento adequado do aplicativo.',
+                        encryption: 'Criptografia de Ponta a Ponta:',
+                        noAccount: 'Nenhuma Conta Necessária:',
+                        local: 'Armazenamento Local:',
+                        gdpr: 'Conformidade com LGPD:',
+                        permissions: 'Permissões Claras:'
+                    },
+                    4: { 
+                        title: 'O que torna este aplicativo diferente dos outros?', 
+                        answer: 'Ao contrário dos aplicativos tradicionais, o nosso usa algoritmos de IA avançados e aprendizado de máquina para fornecer recomendações personalizadas e recursos preditivos que se adaptam aos seus padrões de uso.',
+                        ai: 'Alimentado por IA:',
+                        sync: 'Sincronização Multiplataforma:',
+                        offline: 'Modo Offline:',
+                        custom: 'Personalização:',
+                        community: 'Recursos da Comunidade:'
+                    }
+                }
+            }
+        };
+
+        let currentLanguage = 'en';
+        let isDropdownOpen = false;
+
+        function toggleDropdown() {
+            isDropdownOpen = !isDropdownOpen;
+            const container = document.getElementById('languageContainer');
+            const btn = document.getElementById('languageBtn');
+            
+            if (isDropdownOpen) {
+                container.classList.add('open');
+                btn.classList.add('open');
+            } else {
+                container.classList.remove('open');
+                btn.classList.remove('open');
+            }
+        }
+
+        function selectLanguage(lang) {
+            currentLanguage = lang;
+            updateLanguage();
+            toggleDropdown();
+            
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.classList.remove('selected');
+                if (option.dataset.lang === lang) {
+                    option.classList.add('selected');
+                }
+            });
+        }
+
+        function updateLanguage() {
+            const langData = languages[currentLanguage];
+            const faqData = langData.faq;
+            
+            // Update button
+            document.getElementById('currentFlag').textContent = langData.flag;
+            document.getElementById('currentLang').textContent = langData.code;
+            
+            // Update hero content
+            document.getElementById('heroTitle').textContent = langData.heroTitle;
+            document.getElementById('heroSubtitle').textContent = langData.heroSubtitle;
+            document.getElementById('getStartedText').textContent = langData.getStarted;
+            document.getElementById('seeDemoText').textContent = langData.seeDemo;
+            
+            // Update platform content
+            document.getElementById('platformTitle').textContent = langData.platformTitle;
+            const androidData = langData.android;
+            document.getElementById('androidTitle').textContent = androidData.title;
+            document.getElementById('androidDesc').textContent = androidData.desc;
+            document.getElementById('androidBtn').textContent = androidData.btn;
+            
+            const iosData = langData.ios;
+            document.getElementById('iosTitle').textContent = iosData.title;
+            document.getElementById('iosDesc').textContent = iosData.desc;
+            document.getElementById('iosBtn').textContent = iosData.btn;
+            
+            // Update FAQ content
+            document.getElementById('faqTitle').textContent = langData.faqTitle;
+            document.getElementById('faqSubtitle').textContent = langData.faqSubtitle;
+            
+            for (let i = 1; i <= 4; i++) {
+                const faq = faqData[i];
+                document.getElementById(`faq${i}Title`).textContent = faq.title;
+                document.getElementById(`faq${i}Answer`).textContent = faq.answer;
+                
+                // Update FAQ list items
+                if (faq.android) document.getElementById(`faq${i}Android`).textContent = faq.android;
+                if (faq.ios) document.getElementById(`faq${i}iOS`).textContent = faq.ios;
+                if (faq.storage) document.getElementById(`faq${i}Storage`).textContent = faq.storage;
+                if (faq.internet) document.getElementById(`faq${i}Internet`).textContent = faq.internet;
+                if (faq.free) document.getElementById(`faq${i}Free`).textContent = faq.free;
+                if (faq.premium) document.getElementById(`faq${i}Premium`).textContent = faq.premium;
+                if (faq.family) document.getElementById(`faq${i}Family`).textContent = faq.family;
+                if (faq.encryption) document.getElementById(`faq${i}Encryption`).textContent = faq.encryption;
+                if (faq.noAccount) document.getElementById(`faq${i}NoAccount`).textContent = faq.noAccount;
+                if (faq.local) document.getElementById(`faq${i}Local`).textContent = faq.local;
+                if (faq.gdpr) document.getElementById(`faq${i}GDPR`).textContent = faq.gdpr;
+                if (faq.permissions) document.getElementById(`faq${i}Permissions`).textContent = faq.permissions;
+                if (faq.ai) document.getElementById(`faq${i}AI`).textContent = faq.ai;
+                if (faq.sync) document.getElementById(`faq${i}Sync`).textContent = faq.sync;
+                if (faq.offline) document.getElementById(`faq${i}Offline`).textContent = faq.offline;
+                if (faq.custom) document.getElementById(`faq${i}Custom`).textContent = faq.custom;
+                if (faq.community) document.getElementById(`faq${i}Community`).textContent = faq.community;
+            }
+            
+            // Update footer content
+            document.getElementById('footerDescription').textContent = langData.footerDescription;
+            document.getElementById('footerQuickLinks').textContent = langData.footerQuickLinks;
+            document.getElementById('footerDownload').textContent = langData.footerDownload;
+            document.getElementById('footerSupport').textContent = langData.footerSupport;
+            document.getElementById('footerFeatures').textContent = langData.footerFeatures;
+            document.getElementById('footerPricing').textContent = langData.footerPricing;
+            document.getElementById('footerBlog').textContent = langData.footerBlog;
+            document.getElementById('footerCompany').textContent = langData.footerCompany;
+            document.getElementById('footerAbout').textContent = langData.footerAbout;
+            document.getElementById('footerCareers').textContent = langData.footerCareers;
+            document.getElementById('footerPress').textContent = langData.footerPress;
+            document.getElementById('footerPartners').textContent = langData.footerPartners;
+            document.getElementById('footerContact').textContent = langData.footerContact;
+            document.getElementById('footerLegal').textContent = langData.footerLegal;
+            document.getElementById('footerPrivacy').textContent = langData.footerPrivacy;
+            document.getElementById('footerTerms').textContent = langData.footerTerms;
+            document.getElementById('footerCookies').textContent = langData.footerCookies;
+            document.getElementById('footerSecurity').textContent = langData.footerSecurity;
+            document.getElementById('footerAccessibility').textContent = langData.footerAccessibility;
+            document.getElementById('footerCopyright').textContent = langData.footerCopyright;
+            document.getElementById('footerSitemap').textContent = langData.footerSitemap;
+            document.getElementById('footerEmail').textContent = langData.footerEmail;
+            document.getElementById('footerMadeWith').textContent = langData.footerMadeWith;
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            const container = document.getElementById('languageContainer');
+            if (!container.contains(e.target)) {
+                isDropdownOpen = false;
+                container.classList.remove('open');
+                document.getElementById('languageBtn').classList.remove('open');
+            }
+        });
+
+        // FAQ functionality
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Platform selection
+        let selectedPlatform = null;
+
+        function selectPlatform(platform) {
+            document.querySelectorAll('.platform-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+            selectedPlatform = platform;
+        }
+
+        function downloadApp(platform) {
+            if (platform === 'android') {
+                window.open('https://play.google.com/store/apps', '_blank');
+            } else {
+                window.open('https://www.apple.com/app-store/', '_blank');
+            }
+            console.log(`Download initiated for ${platform}`);
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add scroll effect to nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.color = '#333';
+                document.querySelector('.nav-title').style.color = '#333';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.1)';
+                nav.style.color = 'white';
+                document.querySelector('.nav-title').style.color = 'white';
+            }
+        });
+
+        // Initialize
+        updateLanguage();
+    </script>
+</body>
+</html>
